@@ -127,7 +127,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
   public ParseCurrentUserController getCurrentUserController() {
     if (currentUserController.get() == null) {
-      File file = new File(Parse.getParseDir(), FILENAME_CURRENT_USER);
+      File file = new File(Parse.getParseFilesDir(), FILENAME_CURRENT_USER);
       FileObjectStore<ParseUser> fileStore =
           new FileObjectStore<>(ParseUser.class, file, ParseUserCurrentCoder.get());
       ParseObjectStore<ParseUser> store = Parse.isLocalDatastoreEnabled()
